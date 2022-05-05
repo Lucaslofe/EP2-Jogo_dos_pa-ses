@@ -101,7 +101,61 @@ paises["América do Sul"] = {
     
             }
 
-paises["América Central"] = {}
+paises["América Central"] = {
+    "República Dominicana":
+        [
+            "Azul, Vermelha e Branca",
+            "Santo Domingo",
+            "10 Milhões",
+            "48.442 km²",
+            "América Central"
+        ],
+    "Porto Rico":
+        [
+            "Azul, Branco e Vermelho",
+            "San Juan",
+            "3 Milhões",
+            "9.104 km²",
+            "América Central"
+        ],
+    "Costa Rica":
+        [ 
+            "Vemelho, Branco e Azul",
+            "San José",
+            "5 Milhões",
+            "51.179 km²",
+            "América Central"
+        ],
+    "Panamá":
+        [ 
+            "Branco, Azul e Vermelho",
+            "Cidade do Panamá",
+            "4 Milhões",
+            "75.517 km²",
+            "América Central"
+        ],
+    "Nicarágua":
+        [
+            "Azul e Branco",
+            "Manágua",
+            "6 Milhões",
+            "130.373 km²",
+            "América Central"
+        ],
+    "Haiti":
+        [ 
+            "Azul e Vermelho",
+            "Porto Príncipe",
+            "11 Milhões",
+            "27.750 km²",
+            "América Central"
+        ],
+    
+
+
+                            
+                            
+            }
 paises["América do Norte"] = {}
 paises["Europa"] = {}
 paises["África"] = {}
