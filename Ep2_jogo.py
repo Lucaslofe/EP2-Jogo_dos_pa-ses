@@ -150,9 +150,46 @@ paises["América Central"] = {
             "27.750 km²",
             "América Central"
         ],
-    
-
-
+    "Honduras":
+        [ 
+            "Azul Claro e Branco",
+            "Tegucigalpa",
+            "9 MIlhões",
+            "112.492 km²",
+            "América Central"
+        ],
+    "El Salvador":
+        [ 
+            "Azul Escuro e Branco",
+            "El Salvador",
+            "6 Milhões",
+            "21.041 km²",
+            "América Central"
+        ],
+    "Cuba":
+        [ 
+            "Azul, Vermelho e Branco",
+            "Havana",
+            "11 Milhões",
+            "109.884 km²",
+            "AMérica Central"
+        ],
+    "Jamaica":
+        [ 
+            "Preto, Amarelo e Verde",
+            "Kingston",
+            "2 Milhões",
+            "10.992 km²",
+            "América Central"
+        ],
+    "Guatemala":
+        [ 
+            "Azul e Branco",
+            "Cidade da Guatemala",
+            "18 Milhões",
+            "108.889 km²",
+            "América Central"
+        ]
                             
                             
             }
