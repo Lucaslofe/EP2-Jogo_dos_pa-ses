@@ -1,3 +1,6 @@
+from ctypes import cdll
+
+
 paises = {}
 paises["América do Sul"] = {
     "Brasil": 
@@ -189,9 +192,24 @@ paises["América Central"] = {
             "18 Milhões",
             "108.889 km²",
             "América Central"
+        ],
+    "Belize":
+        [ 
+            "Vermelha e Azul",
+            "Belmopã",
+            "397 mil",
+            "22.965 km²",
+            "América Central"
+        ],
+    "Bahamas":
+        [ 
+            "Preto, Azul e Amarelo",
+            "Nassau",
+            "393 mil",
+            "13.880 km²",
+            "América Central"
         ]
-                            
-                            
+                                            
             }
 paises["América do Norte"] = {}
 paises["Europa"] = {}
