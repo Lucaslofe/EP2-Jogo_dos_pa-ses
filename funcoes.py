@@ -1,7 +1,7 @@
 from math import *
 import random 
 
-def normaliza(diciAonario):
+def normaliza(dicionario):
     paises = {}
 
     for continente in dicionario:
