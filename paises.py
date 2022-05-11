@@ -1,3 +1,5 @@
+import json
+
 EARTH_RADIUS = 6371
 
 DADOS = {
@@ -3814,3 +3816,16 @@ DADOS = {
     }
   }
 }
+
+for continente in DADOS:
+    with open ("base_paises.json", "r+", encoding="utf8") as f:
+        DATA = DADOS[continente]
+        for pais in DATA:
+            DATA[pais]["Continente"] = continente
+        try:
+            paises = json.load(f)
+            paises.update(DATA)
+            f.seek(0)
+            json.dump(paises, f, ensure_ascii=False, indent=4)
+        except:
+            json.dump(DATA, f, ensure_ascii=False, indent=4)
