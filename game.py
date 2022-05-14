@@ -1,5 +1,7 @@
+#nao sei colocar cores da bandeira (dicas)
 from dados import *
 from funcoes import *
+import random
 
 lista_de_paises = normaliza(DADOS)
 
@@ -15,27 +17,52 @@ print('Um país foi escolhido, tente adivinhar!\n')
 while n_tentativas > 0:
     print('Você tem {} tentativa(s)\n'.format(n_tentativas))
     chute = input('Qual é o seu palpite? ').lower()
+    distancias = []
 
     if chute in lista_de_paises:
         if chute == pais_escolhido:
-            print('Você ganhou')
+            print('Você ganhou!!')
             break
         else:
             dist = haversine(EARTH_RADIUS, lista_de_paises[pais_escolhido]['geo']['latitude'],  lista_de_paises[pais_escolhido]['geo']['longitude'],  lista_de_paises[chute]['geo']['latitude'], lista_de_paises[chute]['geo']['longitude'])
             dist = round(dist)
-            dist = str(dist).replace('.', ',')
-            if len(dist) > 3:
-                dist = dist[:len(dist)-3] + '.' + dist[len(dist)-3:]
-            print(f'Distâncias:\n {dist} km -> {chute}\n')
-            n_tentativas -= 1
-    elif chute == 'dica':
+            adiciona_em_ordem(chute, dist, distancias)
+            print('Distâncias:')
+            for pais in distancias:
+                dist = pais[1]
+                dist = str(dist).replace('.', ',')
+                if len(dist) > 3:
+                    dist = dist[:len(dist)-3] + '.' + dist[len(dist)-3:]
+                nome_pais = pais[0]
+                print(f' {dist} km -> {nome_pais}')
+                n_tentativas -= 1
+    elif chute == 'dica'or chute == 'dicas':
         print('Mercado de Dicas')
         print('-'*40)
         print(' 1. Cor da Bandeira    - custa 4 tentativas\n 2. Letra da Capital   - custa 3 tentativas\n 3. Área               - custa 6 tentativas\n 4. População          - custa 5 tentativas\n 5. Continente         - custa 7 tentativas\n 0. Sem dica')
         print('-'*40)
+        dicas = []
         dica = -1
+        dica = int(input('Escolha sua opção [0|1|2|3|4|5] : '))
         while dica != 0 and dica != 1 and dica != 2 and dica != 3 and dica != 4 and dica != 5:
+            print('Opção invalida')
             dica = int(input('Escolha sua opção [0|1|2|3|4|5] : '))
-            if dica != 0 or dica != 1 or dica != 2 or dica != 3 or dica != 4 or dica != 5:
-                print('Opção invalida')
+        if dica == 1:
+            print(f'\nDistâncias:\n {dist} km -> {chute}\n')
+            #cores_bandeira = lista_de_paises[pais_escolhido]['bandeira']
+        elif dica == 2:
+            print(f'\nDistâncias:\n {dist} km -> {chute}\n')
+            print('Dicas:\n')
+            capital = lista_de_paises['franca']['capital']
+            letras = []
+            for l in capital:
+                    letras.append(l)
+            aleat = random.randint(0, len(letras)-1)
+            letra_capital = letras[aleat]
+            letras.pop(aleat)
+            dica2 = (f' - Letra da capital: {letra_capital}')
+            
+            
+    else:
+        print('país desconhecido')
         
