@@ -70,8 +70,9 @@ def adiciona_em_ordem(pais, distancia, lista):
     return saida
 
 
-def milhar(string):
-     return string if len(string) <= 3 else milhar(string[:-3], '.') + '.' + string[-3:]
+def milhar(num, sep): 
+    s = str(num)
+    return s if len(s) <= 3 else milhar(s[:-3], sep) + sep + s[-3:]
 
 
 def sorteia_letra(palavra, res):

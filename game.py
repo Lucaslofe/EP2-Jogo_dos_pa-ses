@@ -73,7 +73,8 @@ while n_tentativas > 0:
             printa_lista_paises(distancias)
             print('Dicas:')
             area = lista_de_paises[pais_escolhido]['area']
-            dica3 = (f' - Área: {milhar(area)} km2')
+            area = milhar(area, '.')
+            dica3 = (f' - Área: {area} km2')
             dicas.append(dica3)
             for i in dicas:
                 print(i)
@@ -82,8 +83,18 @@ while n_tentativas > 0:
             printa_lista_paises(distancias)
             print('Dicas:')
             populacao = lista_de_paises[pais_escolhido]['populacao']
-            dica4 = (f' - População: {milhar(populacao)} habitantes')
+            populacao = milhar(populacao, '.')
+            dica4 = (f' - População: {populacao} habitantes')
             dicas.append(dica4)
+            for i in dicas:
+                print(i)
+        elif dica == 5:
+            n_tentativas -= 7
+            printa_lista_paises(distancias)
+            print('Dicas:')
+            continente = lista_de_paises[pais_escolhido]['continente']
+            dica5 = (f' - Continente: {continente}')
+            dicas.append(dica5)
             for i in dicas:
                 print(i)
 
