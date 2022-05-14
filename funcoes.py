@@ -70,6 +70,10 @@ def adiciona_em_ordem(pais, distancia, lista):
     return saida
 
 
+def milhar(string):
+     return string if len(string) <= 3 else milhar(string[:-3], '.') + '.' + string[-3:]
+
+
 def sorteia_letra(palavra, res):
     restricoes = ['.', ',', '-', ';', ' ']
     check = ''
@@ -86,3 +90,12 @@ def sorteia_letra(palavra, res):
         if palavra[num] not in restricoes:
             return palavra[num]
     
+def printa_lista_paises(distancias):
+
+    for pais in distancias:
+        dist = pais[1]
+        dist = str(dist).replace('.', ',')
+        if len(dist) > 3:
+            dist = dist[:len(dist)-3] + '.' + dist[len(dist)-3:]
+        nome_pais = pais[0]
+        print(f' {dist} km -> {nome_pais}')

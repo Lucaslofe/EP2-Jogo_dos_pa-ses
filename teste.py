@@ -1,21 +1,15 @@
 from dados import *
 from funcoes import *
-
 lista_de_paises = normaliza(DADOS)
 
-cores_bandeira = []
 
-capital = lista_de_paises['franca']['capital']
-letras = []
-for l in capital:
-        letras.append(l)
-for i in range(len(capital)):
-    aleat = random.randint(0, len(letras)-1)
-    letra_capital = letras[aleat]
-    letras.pop(aleat)
+def milhar(s, sep): # s = string, sep pode ser '.' ou ','
+     return s if len(s) <= 3 else milhar(s[:-3], sep) + sep + s[-3:]
+
+print(milhar('545434343534332', '.'))
 
 
-    print(letra_capital)
+
  
 
 
