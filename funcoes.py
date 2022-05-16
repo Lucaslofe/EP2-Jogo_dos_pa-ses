@@ -94,9 +94,18 @@ def sorteia_letra(palavra, res):
 def printa_lista_paises(distancias):
 
     for pais in distancias:
-        dist = pais[1]
-        dist = str(dist).replace('.', ',')
+        distancia = pais[1]
+        dist = str(distancia).replace('.', ',')
         if len(dist) > 3:
             dist = dist[:len(dist)-3] + '.' + dist[len(dist)-3:]
         nome_pais = pais[0]
-        print(f' {dist} km -> {nome_pais}')
+        if distancia > 10000:
+            print(f' \033[37m{dist} km -> {nome_pais}\033[m')
+        elif distancia > 5000:
+            print(f' \033[35m{dist} km -> {nome_pais}\033[m')
+        elif distancia > 2000:
+            print(f' \033[31m{dist} km -> {nome_pais}\033[m')
+        elif distancia > 1000:
+            print(f' \033[33m{dist} km -> {nome_pais}\033[m')
+        else:
+            print(f' \033[34m{dist} km -> {nome_pais}\033[m')
